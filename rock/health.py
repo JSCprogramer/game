@@ -7,15 +7,18 @@ bar_turtle.penup()
 bar_turtle.speed(0)
 
 def update_bar():
-    
+    bar_turtle.clear()
 
-    # Position bar under the rock
+    # Rock's top-left corner
     x = rock.rock_turtle.xcor()
-    y = rock.rock_turtle.ycor() - 20  # 20 pixels below rock
+    y = rock.rock_turtle.ycor()
 
-    bar_turtle.goto(x - 50, y)  # left side of bar
+    # Position bar directly under rock
+    bar_x = x
+    bar_y = y - 110  # 100px rock height + 10px spacing
 
-    # Background (red)
+    # Draw red background (full bar)
+    bar_turtle.goto(bar_x, bar_y)
     bar_turtle.color("red")
     bar_turtle.begin_fill()
     for _ in range(2):
@@ -25,12 +28,11 @@ def update_bar():
         bar_turtle.left(90)
     bar_turtle.end_fill()
 
-    # Health amount (green)
-    bar_turtle.goto(x - 50, y)
+    # Draw green health amount
+    bar_turtle.goto(bar_x, bar_y)
     bar_turtle.color("green")
     bar_turtle.begin_fill()
-    
-    width = rock.health  # health controls bar length
+    width = rock.hp  # health value
     for _ in range(2):
         bar_turtle.forward(width)
         bar_turtle.left(90)

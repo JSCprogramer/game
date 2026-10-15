@@ -5,9 +5,7 @@ from rock import health
 base_bg.setup_bg()
 
 # Move rock anywhere you want
-rock.rock_turtle.goto(-35, -15)
+rock.rock_turtle.goto(0, 0)
 rock.draw_rock()
-
-
 
 t.done()
