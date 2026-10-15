@@ -1,10 +1,14 @@
 import turtle as t
+from . import health
+
 
 rock_turtle = t.Turtle()
 rock_turtle.fillcolor("grey")
 rock_turtle.hideturtle()
 rock_turtle.penup()
 rock_turtle.speed(0)
+
+hp = 100
 
 def draw_rock():
     rock_turtle.begin_fill()
@@ -15,4 +19,5 @@ def draw_rock():
     rock_turtle.end_fill()
     rock_turtle.penup()
 
-health = 100
+    health.update_bar()
+
